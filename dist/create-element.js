@@ -58,6 +58,44 @@ function createClassArray(classString) {
 
 /***/ }),
 
+/***/ "./src/removeClass.js":
+/*!****************************!*\
+  !*** ./src/removeClass.js ***!
+  \****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function createClassArray(classString) {
+  return classString.trim().split(/^|\s+/);
+}
+
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(classes) {
+  var _this$el$classList;
+
+  var classNames = createClassArray(classes);
+
+  (_this$el$classList = this.el.classList).remove.apply(_this$el$classList, _toConsumableArray(classNames));
+
+  return this;
+}
+
+/***/ }),
+
 /***/ "./src/select.js":
 /*!***********************!*\
   !*** ./src/select.js ***!
@@ -170,8 +208,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _append_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./append.js */ "./src/append.js");
 /* harmony import */ var _createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createClass.js */ "./src/createClass.js");
-/* harmony import */ var _selectChild_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./selectChild.js */ "./src/selectChild.js");
-/* harmony import */ var _select_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./select.js */ "./src/select.js");
+/* harmony import */ var _removeClass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./removeClass.js */ "./src/removeClass.js");
+/* harmony import */ var _selectChild_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selectChild.js */ "./src/selectChild.js");
+/* harmony import */ var _select_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./select.js */ "./src/select.js");
+
 
 
 
@@ -183,9 +223,10 @@ function Creatable() {
 Creatable.prototype = {
   constructor: Creatable,
   append: _append_js__WEBPACK_IMPORTED_MODULE_0__.default,
-  select: _select_js__WEBPACK_IMPORTED_MODULE_3__.default,
-  selectChild: _selectChild_js__WEBPACK_IMPORTED_MODULE_2__.default,
-  createClass: _createClass_js__WEBPACK_IMPORTED_MODULE_1__.default
+  select: _select_js__WEBPACK_IMPORTED_MODULE_4__.default,
+  selectChild: _selectChild_js__WEBPACK_IMPORTED_MODULE_3__.default,
+  createClass: _createClass_js__WEBPACK_IMPORTED_MODULE_1__.default,
+  removeClass: _removeClass_js__WEBPACK_IMPORTED_MODULE_2__.default
 };
 })();
 

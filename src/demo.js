@@ -13,6 +13,7 @@ el
   .select('#container')
   .selectChild('span') 
   .createClass('another-class') 
+  .removeClass('test-span')
 
 console.log(el)
 
