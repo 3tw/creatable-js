@@ -1,5 +1,3 @@
-import { Creatable } from './index.js'
-
 function createClassArray (classString) {
   return classString.trim().split(/^|\s+/);
 }
