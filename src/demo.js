@@ -1,24 +1,20 @@
 import { Creatable } from './index.js'
 
-let el = new Creatable()
+const el = new Creatable()
 
 el
   .select('#container')
   .append('div')
-  .createClass('trst test')
+  .addClass('trst test')
   .append('span')
-  .createClass('test-span')
-  
-el
-  .select('#container')
-  .selectChild('span') 
-  .createClass('another-class') 
-  .removeClass('test-span')
+  .addClass('test-span')
+  // .select('#container')
+  // .selectChild('span')
+  // .addClass('another-class')
+  // .removeClass('test-span')
+  .addClass('new-class')
+  .selectParent()
+  .append('p')
+  .addClass('new-span')
 
 console.log(el)
-
-///
-
-let el2 = new Creatable()
-el2.select('p')
-

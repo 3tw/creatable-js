@@ -2,28 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/append.js":
-/*!***********************!*\
-  !*** ./src/append.js ***!
-  \***********************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(element) {
-  var newEl = this.el.appendChild(document.createElement(element));
-  this.el = newEl;
-  return this;
-}
-
-/***/ }),
-
-/***/ "./src/createClass.js":
-/*!****************************!*\
-  !*** ./src/createClass.js ***!
-  \****************************/
+/***/ "./src/addClass.js":
+/*!*************************!*\
+  !*** ./src/addClass.js ***!
+  \*************************/
 /***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -58,6 +40,24 @@ function createClassArray(classString) {
 
 /***/ }),
 
+/***/ "./src/append.js":
+/*!***********************!*\
+  !*** ./src/append.js ***!
+  \***********************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__(element) {
+  var newEl = this.el.appendChild(document.createElement(element));
+  this.el = newEl;
+  return this;
+}
+
+/***/ }),
+
 /***/ "./src/demo.js":
 /*!*********************!*\
   !*** ./src/demo.js ***!
@@ -68,12 +68,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./src/index.js");
 
 var el = new _index_js__WEBPACK_IMPORTED_MODULE_0__.Creatable();
-el.select('#container').append('div').createClass('trst test').append('span').createClass('test-span');
-el.select('#container').selectChild('span').createClass('another-class').removeClass('test-span');
-console.log(el); ///
-
-var el2 = new _index_js__WEBPACK_IMPORTED_MODULE_0__.Creatable();
-el2.select('p');
+el.select('#container').append('div').addClass('trst test').append('span').addClass('test-span') // .select('#container')
+// .selectChild('span')
+// .addClass('another-class')
+// .removeClass('test-span')
+.addClass('new-class').selectParent().append('p').addClass('new-span');
+console.log(el);
 
 /***/ }),
 
@@ -88,10 +88,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Creatable": () => (/* binding */ Creatable)
 /* harmony export */ });
 /* harmony import */ var _append_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./append.js */ "./src/append.js");
-/* harmony import */ var _createClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createClass.js */ "./src/createClass.js");
+/* harmony import */ var _addClass_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addClass.js */ "./src/addClass.js");
 /* harmony import */ var _removeClass_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./removeClass.js */ "./src/removeClass.js");
-/* harmony import */ var _selectChild_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./selectChild.js */ "./src/selectChild.js");
-/* harmony import */ var _select_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./select.js */ "./src/select.js");
+/* harmony import */ var _select_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./select.js */ "./src/select.js");
+/* harmony import */ var _selectChild_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./selectChild.js */ "./src/selectChild.js");
+/* harmony import */ var _selectParent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./selectParent.js */ "./src/selectParent.js");
+
 
 
 
@@ -104,9 +106,10 @@ function Creatable() {
 Creatable.prototype = {
   constructor: Creatable,
   append: _append_js__WEBPACK_IMPORTED_MODULE_0__.default,
-  select: _select_js__WEBPACK_IMPORTED_MODULE_4__.default,
-  selectChild: _selectChild_js__WEBPACK_IMPORTED_MODULE_3__.default,
-  createClass: _createClass_js__WEBPACK_IMPORTED_MODULE_1__.default,
+  select: _select_js__WEBPACK_IMPORTED_MODULE_3__.default,
+  selectChild: _selectChild_js__WEBPACK_IMPORTED_MODULE_4__.default,
+  selectParent: _selectParent_js__WEBPACK_IMPORTED_MODULE_5__.default,
+  addClass: _addClass_js__WEBPACK_IMPORTED_MODULE_1__.default,
   removeClass: _removeClass_js__WEBPACK_IMPORTED_MODULE_2__.default
 };
 
@@ -189,6 +192,24 @@ __webpack_require__.r(__webpack_exports__);
     throw new Error("Element with selector '".concat(selector, "' could not be found."));
   }
 
+  return this;
+}
+
+/***/ }),
+
+/***/ "./src/selectParent.js":
+/*!*****************************!*\
+  !*** ./src/selectParent.js ***!
+  \*****************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* export default binding */ __WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ function __WEBPACK_DEFAULT_EXPORT__() {
+  console.log(this.el.parentNode);
+  this.el = this.el.parentNode;
   return this;
 }
 
