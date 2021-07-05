@@ -1,6 +1,5 @@
 export default function(element) {
-  const newEl = this.el.appendChild(document.createElement(element))
-  this.el = newEl
+  this.el = this.el.appendChild(document.createElement(element))
   
   return this
 }
