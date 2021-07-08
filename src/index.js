@@ -3,6 +3,7 @@ import creatable_attribute from './creatable/attribute.js'
 import creatable_addClass from './creatable/addClass.js'
 import creatable_insertBefore from './creatable/insertBefore.js'
 import creatable_insertAfter from './creatable/insertAfter.js'
+import creatable_insertParent from './creatable/insertParent.js'
 import creatable_prepend from './creatable/prepend.js'
 import creatable_removeClass from './creatable/removeClass.js'
 import creatable_select from './creatable/select.js'
@@ -23,6 +24,7 @@ Creatable.prototype = {
   addClass: creatable_addClass,
   insertAfter: creatable_insertAfter,
   insertBefore: creatable_insertBefore,
+  insertParent: creatable_insertParent,
   prepend: creatable_prepend,
   removeClass: creatable_removeClass,
   select: creatable_select,

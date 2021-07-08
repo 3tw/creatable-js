@@ -1,5 +1,5 @@
 export default function(text) {
-  this.el.appendChild(document.createTextNode(text))
+  this.el.innerText = text
 
   return this
 }
